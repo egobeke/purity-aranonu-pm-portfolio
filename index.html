@@ -1,0 +1,1631 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Purity Uju Aranonu · Product Manager</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;1,300&family=DM+Sans:wght@300;400;500&display=swap');
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0
+    }
+
+    :root {
+      --white: #ffffff;
+      --off: #f8f7f4;
+      --sand: #f2ede4;
+      --sage-light: #eaf0ea;
+      --sage: #8aab89;
+      --sage-mid: #6b916a;
+      --teal-light: #e3efee;
+      --teal: #4d8c87;
+      --teal-mid: #3a706b;
+      --taupe: #c9c3b6;
+      --muted: #8a8880;
+      --char: #3a3835;
+      --dark: #1a1916;
+      --serif: 'Fraunces', serif;
+      --sans: 'DM Sans', sans-serif;
+    }
+
+    .pf {
+      width: 100%;
+      font-family: var(--sans);
+      background: transparent
+    }
+
+    .nav {
+      display: flex;
+      gap: 5px;
+      padding: 14px 20px;
+      background: var(--white);
+      border-bottom: 0.5px solid #e2ddd6;
+      flex-wrap: wrap;
+      position: sticky;
+      top: 0;
+      z-index: 100
+    }
+
+    .nav button {
+      font-size: 10.5px;
+      padding: 4px 9px;
+      border: 0.5px solid var(--taupe);
+      background: transparent;
+      color: var(--muted);
+      cursor: pointer;
+      border-radius: 3px;
+      font-family: var(--sans);
+      letter-spacing: .3px;
+      transition: all .15s
+    }
+
+    .nav button.on {
+      background: var(--char);
+      color: var(--white);
+      border-color: var(--char)
+    }
+
+    .slide {
+      display: none;
+      min-height: 540px;
+      background: var(--white)
+    }
+
+    .slide.on {
+      display: block
+    }
+
+    /* ─── SLIDE 1 COVER ─── */
+    .s1-wrap {
+      padding: 52px 56px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 540px;
+      position: relative;
+      overflow: hidden
+    }
+
+    .s1-accent-bar {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--sage) 0%, var(--teal) 60%, transparent 100%)
+    }
+
+    .s1-dot-field {
+      position: absolute;
+      right: 40px;
+      top: 40px;
+      display: grid;
+      grid-template-columns: repeat(10, 1fr);
+      gap: 9px;
+      opacity: .1
+    }
+
+    .s1-dot {
+      width: 2.5px;
+      height: 2.5px;
+      border-radius: 50%;
+      background: var(--char)
+    }
+
+    .s1-tag {
+      font-size: 10px;
+      letter-spacing: 2.5px;
+      color: var(--sage-mid);
+      text-transform: uppercase;
+      margin-bottom: 28px
+    }
+
+    .s1-name {
+      font-family: var(--serif);
+      font-size: 54px;
+      color: var(--dark);
+      line-height: 1.02;
+      margin-bottom: 18px;
+      font-weight: 300
+    }
+
+    .s1-rule {
+      width: 36px;
+      height: 1.5px;
+      background: var(--teal);
+      margin-bottom: 22px
+    }
+
+    .s1-sub {
+      font-size: 12px;
+      color: var(--muted);
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      margin-bottom: 28px
+    }
+
+    .s1-statement {
+      font-size: 14.5px;
+      color: var(--char);
+      line-height: 1.85;
+      max-width: 430px;
+      font-weight: 300;
+      margin-bottom: 40px
+    }
+
+    .s1-links {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap
+    }
+
+    .s1-link-card {
+      padding: 10px 18px;
+      border: 0.5px solid var(--taupe);
+      font-size: 12px;
+      color: var(--char);
+      text-decoration: none;
+      letter-spacing: .5px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 7px
+    }
+
+    .s1-link-card.primary {
+      background: var(--char);
+      color: var(--white);
+      border-color: var(--char)
+    }
+
+    .s1-link-card i {
+      font-size: 14px
+    }
+
+    .s1-corner {
+      position: absolute;
+      bottom: 36px;
+      right: 48px;
+      font-size: 10px;
+      color: var(--taupe);
+      letter-spacing: 1.5px;
+      text-transform: uppercase
+    }
+
+    /* ─── SLIDE 2 ABOUT ─── */
+    .s2-wrap {
+      display: grid;
+      grid-template-columns: 1fr 200px;
+      min-height: 540px
+    }
+
+    .s2-left {
+      padding: 48px 48px 48px 56px;
+      display: flex;
+      flex-direction: column
+    }
+
+    .s2-right {
+      background: var(--sage-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 32px 24px
+    }
+
+    .s2-tag {
+      font-size: 10px;
+      letter-spacing: 2.5px;
+      color: var(--sage-mid);
+      text-transform: uppercase;
+      margin-bottom: 28px
+    }
+
+    .s2-headline {
+      font-family: var(--serif);
+      font-size: 26px;
+      color: var(--dark);
+      line-height: 1.4;
+      margin-bottom: 24px;
+      font-weight: 300;
+      font-style: italic
+    }
+
+    .s2-philosophy {
+      background: var(--sand);
+      border-left: 2px solid var(--teal);
+      padding: 14px 18px;
+      margin-bottom: 24px;
+      font-size: 13.5px;
+      color: var(--char);
+      line-height: 1.75;
+      font-weight: 300
+    }
+
+    .s2-traits-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin-top: auto
+    }
+
+    .trait {
+      padding: 10px 14px;
+      border-top: 1.5px solid var(--sage);
+      background: var(--sage-light)
+    }
+
+    .trait-name {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--char);
+      margin-bottom: 3px
+    }
+
+    .trait-desc {
+      font-size: 11px;
+      color: var(--muted);
+      line-height: 1.5
+    }
+
+    /* ─── SLIDE 3 APPROACH ─── */
+    .s3-wrap {
+      padding: 48px 56px;
+      min-height: 540px
+    }
+
+    .s3-tag {
+      font-size: 10px;
+      letter-spacing: 2.5px;
+      color: var(--teal-mid);
+      text-transform: uppercase;
+      margin-bottom: 8px
+    }
+
+    .s3-title {
+      font-family: var(--serif);
+      font-size: 28px;
+      color: var(--dark);
+      margin-bottom: 32px;
+      font-weight: 300
+    }
+
+    .os-steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-bottom: 24px
+    }
+
+    .os-step {
+      padding: 18px 16px;
+      background: var(--off);
+      border-top: 2px solid var(--taupe);
+      position: relative
+    }
+
+    .os-step.accent {
+      border-top-color: var(--teal)
+    }
+
+    .os-step.sage-a {
+      border-top-color: var(--sage)
+    }
+
+    .os-num {
+      font-size: 10px;
+      color: var(--muted);
+      letter-spacing: 1px;
+      margin-bottom: 8px
+    }
+
+    .os-name {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--dark);
+      margin-bottom: 8px
+    }
+
+    .os-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px
+    }
+
+    .os-tag {
+      font-size: 10px;
+      padding: 2px 8px;
+      border: 0.5px solid var(--taupe);
+      color: var(--muted);
+      background: var(--white)
+    }
+
+    .ai-band {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      border: 0.5px solid var(--taupe)
+    }
+
+    .ai-side {
+      padding: 16px 20px
+    }
+
+    .ai-side-label {
+      font-size: 10px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 10px
+    }
+
+    .ai-side-title {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--char);
+      margin-bottom: 8px
+    }
+
+    .ai-side-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px
+    }
+
+    .ai-side-tag {
+      font-size: 10.5px;
+      padding: 3px 8px;
+      background: var(--teal-light);
+      color: var(--teal-mid)
+    }
+
+    .ai-divider {
+      width: 0.5px;
+      background: var(--taupe)
+    }
+
+    /* ─── PROJECT SLIDES ─── */
+    .proj-wrap {
+      padding: 44px 56px;
+      min-height: 540px
+    }
+
+    .proj-tag {
+      font-size: 10px;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      margin-bottom: 12px
+    }
+
+    .proj-title {
+      font-family: var(--serif);
+      font-size: 28px;
+      color: var(--dark);
+      line-height: 1.2;
+      margin-bottom: 6px;
+      font-weight: 300
+    }
+
+    .proj-sub {
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 28px;
+      letter-spacing: .5px
+    }
+
+    .proj-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 36px
+    }
+
+    .plabel {
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 10px
+    }
+
+    .pbody {
+      font-size: 13px;
+      color: var(--char);
+      line-height: 1.85;
+      font-weight: 300;
+      margin-bottom: 20px
+    }
+
+    .plist {
+      list-style: none;
+      margin-bottom: 20px
+    }
+
+    .plist li {
+      font-size: 13px;
+      color: var(--char);
+      padding-left: 14px;
+      position: relative;
+      line-height: 1.7;
+      font-weight: 300
+    }
+
+    .plist li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--taupe)
+    }
+
+    .insight {
+      background: var(--sand);
+      border-left: 2px solid var(--char);
+      padding: 14px 16px;
+      margin-bottom: 20px
+    }
+
+    .insight p {
+      font-size: 14px;
+      color: var(--dark);
+      line-height: 1.7;
+      font-style: italic;
+      font-family: var(--serif);
+      font-weight: 300
+    }
+
+    .kpi-row {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+      margin-bottom: 20px
+    }
+
+    .kpi {
+      padding: 14px;
+      background: var(--off);
+      border-top: 1.5px solid var(--taupe)
+    }
+
+    .kpi.teal-k {
+      border-top-color: var(--teal)
+    }
+
+    .kpi-val {
+      font-size: 22px;
+      font-weight: 500;
+      color: var(--dark)
+    }
+
+    .kpi-label {
+      font-size: 10.5px;
+      color: var(--muted);
+      margin-top: 3px
+    }
+
+    .rm-visual {
+      background: var(--sand);
+      padding: 16px 18px;
+      margin-bottom: 16px
+    }
+
+    .rm-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 7px
+    }
+
+    .rm-ph {
+      font-size: 10px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: .8px;
+      width: 64px;
+      flex-shrink: 0
+    }
+
+    .rm-track {
+      flex: 1;
+      background: var(--taupe);
+      height: 5px;
+      border-radius: 2px;
+      overflow: hidden
+    }
+
+    .rm-fill {
+      height: 100%;
+      border-radius: 2px;
+      background: var(--teal)
+    }
+
+    .rm-note {
+      font-size: 10px;
+      color: var(--muted);
+      width: 72px;
+      text-align: right
+    }
+
+    .sprint-cols {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px
+    }
+
+    .sprint-head {
+      font-size: 9.5px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 8px;
+      text-align: center
+    }
+
+    .sticky {
+      padding: 10px 11px;
+      font-size: 11px;
+      color: var(--char);
+      line-height: 1.5;
+      margin-bottom: 6px;
+      border-bottom: 2px solid var(--taupe)
+    }
+
+    .sticky.s-sand {
+      background: var(--sand);
+      border-bottom-color: #b5a992
+    }
+
+    .sticky.s-teal {
+      background: var(--teal-light);
+      border-bottom-color: var(--teal)
+    }
+
+    .sticky.s-sage {
+      background: var(--sage-light);
+      border-bottom-color: var(--sage)
+    }
+
+    .flow-row {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      flex-wrap: nowrap;
+      margin-bottom: 12px
+    }
+
+    .flow-box {
+      flex: 1;
+      padding: 9px 10px;
+      background: var(--off);
+      border: 0.5px solid var(--taupe);
+      font-size: 11px;
+      color: var(--char);
+      text-align: center;
+      min-width: 0
+    }
+
+    .flow-box.accent-f {
+      background: var(--teal-light);
+      border-color: var(--teal)
+    }
+
+    .flow-arr {
+      font-size: 12px;
+      color: var(--taupe);
+      padding: 0 3px;
+      flex-shrink: 0
+    }
+
+    /* ─── SLIDE 8 AI ─── */
+    .s8-wrap {
+      padding: 48px 56px;
+      min-height: 540px
+    }
+
+    .pipeline {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-bottom: 24px
+    }
+
+    .pipe-step {
+      padding: 18px 16px;
+      border: 0.5px solid var(--taupe);
+      position: relative
+    }
+
+    .pipe-step::after {
+      content: '→';
+      position: absolute;
+      right: -9px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--taupe);
+      font-size: 12px;
+      z-index: 1
+    }
+
+    .pipe-step:last-child::after {
+      display: none
+    }
+
+    .pipe-phase {
+      font-size: 9.5px;
+      letter-spacing: 1px;
+      color: var(--teal-mid);
+      text-transform: uppercase;
+      margin-bottom: 8px
+    }
+
+    .pipe-name {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--dark);
+      margin-bottom: 5px
+    }
+
+    .pipe-desc {
+      font-size: 11px;
+      color: var(--muted);
+      line-height: 1.6
+    }
+
+    .phil {
+      display: grid;
+      grid-template-columns: 1fr 0.5px 1fr;
+      background: var(--sand);
+      margin-bottom: 20px
+    }
+
+    .phil-col {
+      padding: 18px 22px
+    }
+
+    .phil-divider {
+      background: var(--taupe)
+    }
+
+    .phil-label {
+      font-size: 9.5px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 8px
+    }
+
+    .phil-text {
+      font-family: var(--serif);
+      font-size: 17px;
+      color: var(--dark);
+      line-height: 1.4;
+      font-weight: 300
+    }
+
+    .ai-uses {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px
+    }
+
+    .ai-use-tag {
+      font-size: 11px;
+      padding: 4px 11px;
+      border: 0.5px solid var(--teal);
+      color: var(--teal-mid);
+      background: var(--teal-light)
+    }
+
+    /* ─── SLIDE 9 ─── */
+    .s9-wrap {
+      padding: 48px 56px;
+      min-height: 540px
+    }
+
+    .s9-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px
+    }
+
+    .why-items {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      margin-top: 16px
+    }
+
+    .why-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 13px 0;
+      border-bottom: 0.5px solid #e8e4dd
+    }
+
+    .why-icon {
+      width: 28px;
+      height: 28px;
+      background: var(--sage-light);
+      border-radius: 3px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0
+    }
+
+    .why-icon i {
+      font-size: 14px;
+      color: var(--sage-mid)
+    }
+
+    .why-text-title {
+      font-size: 12.5px;
+      font-weight: 500;
+      color: var(--dark);
+      margin-bottom: 3px
+    }
+
+    .why-text-desc {
+      font-size: 11.5px;
+      color: var(--muted);
+      line-height: 1.5
+    }
+
+    .shopify-pills {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-top: 16px
+    }
+
+    .s-pill {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 11px 14px;
+      background: var(--off)
+    }
+
+    .s-dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--teal);
+      flex-shrink: 0
+    }
+
+    .s-text {
+      font-size: 13px;
+      color: var(--char)
+    }
+
+    .ambition-box {
+      background: var(--sand);
+      border-left: 2px solid var(--teal);
+      padding: 14px 18px;
+      margin-top: 20px;
+      font-family: var(--serif);
+      font-size: 15px;
+      color: var(--dark);
+      line-height: 1.65;
+      font-weight: 300;
+      font-style: italic
+    }
+
+    /* ─── SLIDE 10 CLOSING ─── */
+    .s10-wrap {
+      padding: 56px;
+      min-height: 540px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      overflow: hidden
+    }
+
+    .s10-accent {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--sage), var(--teal), transparent)
+    }
+
+    .s10-tag {
+      font-size: 10px;
+      letter-spacing: 2.5px;
+      color: var(--teal-mid);
+      text-transform: uppercase;
+      margin-bottom: 28px
+    }
+
+    .s10-title {
+      font-family: var(--serif);
+      font-size: 38px;
+      color: var(--dark);
+      line-height: 1.2;
+      margin-bottom: 6px;
+      max-width: 440px;
+      font-weight: 300
+    }
+
+    .s10-rule {
+      width: 40px;
+      height: 1.5px;
+      background: var(--teal);
+      margin: 24px auto
+    }
+
+    .s10-name {
+      font-size: 16px;
+      color: var(--char);
+      font-weight: 300;
+      margin-bottom: 8px
+    }
+
+    .s10-sub {
+      font-size: 11px;
+      letter-spacing: 1.8px;
+      color: var(--muted);
+      text-transform: uppercase;
+      margin-bottom: 36px
+    }
+
+    .s10-links {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 36px
+    }
+
+    .s10-link {
+      padding: 10px 18px;
+      border: 0.5px solid var(--taupe);
+      font-size: 12px;
+      color: var(--char);
+      text-decoration: none;
+      letter-spacing: .4px;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      cursor: pointer
+    }
+
+    .s10-link.primary {
+      background: var(--char);
+      color: var(--white);
+      border-color: var(--char)
+    }
+
+    .s10-statement {
+      font-size: 13.5px;
+      color: var(--muted);
+      line-height: 1.85;
+      max-width: 420px;
+      font-weight: 300;
+      font-style: italic
+    }
+  </style>
+
+  <div class="pf">
+    <nav class="nav" aria-label="Portfolio navigation">
+      <button class="on" onclick="go(0)">01 Cover</button>
+      <button onclick="go(1)">02 About</button>
+      <button onclick="go(2)">03 Approach</button>
+      <button onclick="go(3)">04 HealthConnect</button>
+      <button onclick="go(4)">05 Meal Planning</button>
+      <button onclick="go(5)">06 Temu Sprint</button>
+      <button onclick="go(6)">07 Chowdeck</button>
+      <button onclick="go(7)">08 AI Workflow</button>
+      <button onclick="go(8)">09 Why PM</button>
+      <button onclick="go(9)">10 Closing</button>
+    </nav>
+
+    <!-- ─── SLIDE 1 COVER ─── -->
+    <div class="slide on">
+      <div class="s1-wrap">
+        <div class="s1-accent-bar"></div>
+        <div class="s1-dot-field" aria-hidden="true">
+          <div class="s1-dot"></div>
+          <div class="s1-dot"></div>
+          <div class="s1-dot"></div>
+          <div class="s1-dot"></div>
+          <div class="s1-dot"></div>
+          <div class="s1-dot"></div>
+          <div class="s1-dot"></div>
+          <div class="s1-dot"></div>
+          <div class="s1-dot"></div>
+          <div class="s1-dot"></div>
+          <div class="s1-dot"></div>
+          <div class="s1-dot"></div>
+          <div class="s1-dot"></div>
+          <div class="s1-dot"></div>
+          <div class="s1-dot"></div>
+          <div class="s1-dot"></div>
+          <div class="s1-dot"></div>
+          <div class="s1-dot"></div>
+          <div class="s1-dot"></div>
+          <div class="s1-dot"></div>
+          <div class="s1-dot"></div>
+          <div class="s1-dot"></div>
+          <div class="s1-dot"></div>
+          <div class="s1-dot"></div>
+          <div class="s1-dot"></div>
+          <div class="s1-dot"></div>
+          <div class="s1-dot"></div>
+          <div class="s1-dot"></div>
+          <div class="s1-dot"></div>
+          <div class="s1-dot"></div>
+        </div>
+        <div style="position:relative;z-index:1">
+          <p class="s1-tag">Shopify Apprentice PM · Portfolio 2025</p>
+          <h1 class="s1-name">Purity Uju<br>Aranonu</h1>
+          <div class="s1-rule"></div>
+          <p class="s1-sub">Product Strategy · User Research · Systems Thinking · AI-Assisted Execution</p>
+          <p class="s1-statement">An AI-native aspiring product manager who independently uses research, systems
+            thinking, user insight, and structured execution to solve ambiguous product problems.</p>
+          <div class="s1-links">
+            <a href="mailto:purityaranonu@gmail.com" class="s1-link-card primary"><i class="ti ti-mail"
+                aria-hidden="true"></i>purityaranonu@gmail.com</a>
+            <a href="https://www.linkedin.com/in/purity-aranonu-ba0370405/" class="s1-link-card"><i
+                class="ti ti-brand-linkedin" aria-hidden="true"></i>LinkedIn</a>
+            <a href="https://medium.com/@aranonupurity" class="s1-link-card"><i class="ti ti-brand-medium"
+                aria-hidden="true"></i>Medium</a>
+            <span class="s1-link-card" style="color:var(--muted);border-style:dashed"><i class="ti ti-file-text"
+                aria-hidden="true"></i>Resume / CV</span>
+          </div>
+        </div>
+        <p class="s1-corner">Shopify APM · 2025</p>
+      </div>
+    </div>
+
+    <!-- ─── SLIDE 2 ABOUT ─── -->
+    <div class="slide">
+      <div class="s2-wrap">
+        <div class="s2-left">
+          <p class="s2-tag">02 · About</p>
+          <p class="s2-headline">"I'm most energized by complex systems, ambiguous problems, and understanding why users
+            behave the way they do."</p>
+          <div class="s2-philosophy">
+            I approach products from an operational and systems lens — not just the interface, but the adoption,
+            communication, workflow, and behavioral layers underneath. I work independently, learn quickly in new
+            domains, and find structure in messy, ambiguous problems.
+          </div>
+          <p style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:12px">
+            Operating principles</p>
+          <div class="s2-traits-grid">
+            <div class="trait">
+              <div class="trait-name">Structured in ambiguity</div>
+              <div class="trait-desc">Finding shape in unclear, complex problems</div>
+            </div>
+            <div class="trait">
+              <div class="trait-name">AI-native by default</div>
+              <div class="trait-desc">Real workflow integration, not novelty</div>
+            </div>
+            <div class="trait">
+              <div class="trait-name">Rapid domain learner</div>
+              <div class="trait-desc">Healthcare, fintech, e-commerce, UX</div>
+            </div>
+            <div class="trait">
+              <div class="trait-name">Systems-first thinker</div>
+              <div class="trait-desc">Users, ops, communication, behavior</div>
+            </div>
+            <div class="trait">
+              <div class="trait-name">Execution-oriented</div>
+              <div class="trait-desc">Research means nothing without decisions</div>
+            </div>
+            <div class="trait">
+              <div class="trait-name">High-agency learner</div>
+              <div class="trait-desc">Independent, resourceful, self-directed</div>
+            </div>
+          </div>
+        </div>
+        <div class="s2-right" aria-label="Illustrated portrait of Purity Aranonu">
+          <svg viewBox="0 0 200 340" width="160" height="272" role="img"
+            aria-label="Minimal modern illustration of a young woman, thoughtful and product-focused">
+            <title>Illustrated portrait</title>
+            <defs>
+              <clipPath id="headclip">
+                <ellipse cx="100" cy="88" rx="42" ry="48" />
+              </clipPath>
+            </defs>
+            <ellipse cx="100" cy="88" rx="42" ry="48" fill="#c4956a" />
+            <ellipse cx="100" cy="82" rx="38" ry="42" fill="#d4a574" />
+            <ellipse cx="100" cy="78" rx="34" ry="35" fill="#d4a574" />
+            <path d="M68 100 Q64 72 70 58 Q82 30 100 26 Q118 30 130 58 Q136 72 132 100 Z" fill="#2a1f14" />
+            <path d="M68 60 Q72 42 100 36 Q128 42 132 60 Q136 80 130 90 Q100 102 70 90 Z" fill="#3a2a18" />
+            <ellipse cx="100" cy="84" rx="34" ry="38" fill="#d4a574" />
+            <ellipse cx="86" cy="86" rx="5" ry="6" fill="#c07040" />
+            <ellipse cx="114" cy="86" rx="5" ry="6" fill="#c07040" />
+            <ellipse cx="86" cy="84" rx="3.5" ry="4.5" fill="#2a1a10" />
+            <ellipse cx="114" cy="84" rx="3.5" ry="4.5" fill="#2a1a10" />
+            <ellipse cx="87" cy="83" rx="1.2" ry="1.2" fill="#fff" />
+            <ellipse cx="115" cy="83" rx="1.2" ry="1.2" fill="#fff" />
+            <path d="M93 96 Q100 101 107 96" stroke="#b06040" stroke-width="1.5" fill="none" stroke-linecap="round" />
+            <rect x="68" y="82" width="5" height="2" rx="1" fill="#3a2a18" />
+            <rect x="127" y="82" width="5" height="2" rx="1" fill="#3a2a18" />
+            <path d="M62 108 Q58 115 60 130 Q62 145 68 148 L70 148 Q64 135 66 120 Z" fill="#d4a574" />
+            <path d="M138 108 Q142 115 140 130 Q138 145 132 148 L130 148 Q136 135 134 120 Z" fill="#d4a574" />
+            <path d="M70 136 Q70 125 100 122 Q130 125 130 136 L136 200 Q136 210 100 214 Q64 210 64 200 Z"
+              fill="#4d8c87" />
+            <path d="M70 136 Q60 140 56 165 Q54 180 62 190 L68 188 Q62 178 64 165 Q66 148 70 142 Z" fill="#4d8c87" />
+            <path d="M130 136 Q140 140 144 165 Q146 180 138 190 L132 188 Q138 178 136 165 Q134 148 130 142 Z"
+              fill="#4d8c87" />
+            <rect x="56" y="188" width="14" height="36" rx="6" fill="#d4a574" />
+            <rect x="130" y="188" width="14" height="36" rx="6" fill="#d4a574" />
+            <rect x="76" y="210" width="48" height="60" rx="4" fill="#2a2a2a" />
+            <rect x="78" y="212" width="44" height="55" rx="3" fill="#f2ede4" />
+            <rect x="82" y="218" width="36" height="3" rx="1" fill="#8aab89" />
+            <rect x="82" y="224" width="28" height="2" rx="1" fill="#c9c3b6" />
+            <rect x="82" y="229" width="32" height="2" rx="1" fill="#c9c3b6" />
+            <rect x="82" y="234" width="24" height="2" rx="1" fill="#c9c3b6" />
+            <rect x="82" y="242" width="18" height="10" rx="2" fill="#4d8c87" />
+            <rect x="83" y="243" width="16" height="8" rx="1" fill="#4d8c87" />
+            <path d="M76 210 L72 195" stroke="#d4a574" stroke-width="5" stroke-linecap="round" fill="none" />
+            <circle cx="72" cy="195" r="6" fill="#d4a574" />
+            <rect x="76" y="272" width="48" height="30" rx="12" fill="#2a1f14" />
+            <ellipse cx="100" cy="302" rx="24" ry="8" fill="#2a1f14" />
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── SLIDE 3 APPROACH ─── -->
+    <div class="slide">
+      <div class="s3-wrap">
+        <p class="s3-tag" style="color:var(--teal-mid)">03 · My product operating system</p>
+        <h2 class="s3-title">How I think through product problems</h2>
+        <div class="os-steps">
+          <div class="os-step">
+            <p class="os-num">01</p>
+            <p class="os-name">Understand the user</p>
+            <div class="os-tags"><span class="os-tag">Research</span><span class="os-tag">Behavior</span><span
+                class="os-tag">Journey maps</span><span class="os-tag">Surveys</span></div>
+          </div>
+          <div class="os-step sage-a">
+            <p class="os-num">02</p>
+            <p class="os-name">Identify friction</p>
+            <div class="os-tags"><span class="os-tag">Drop-offs</span><span class="os-tag">Workflow gaps</span><span
+                class="os-tag">Trust issues</span></div>
+          </div>
+          <div class="os-step accent">
+            <p class="os-num">03</p>
+            <p class="os-name">Structure ambiguity</p>
+            <div class="os-tags"><span class="os-tag">Root cause</span><span class="os-tag">Systems map</span><span
+                class="os-tag">Prioritization</span></div>
+          </div>
+          <div class="os-step sage-a">
+            <p class="os-num">04</p>
+            <p class="os-name">Design solutions</p>
+            <div class="os-tags"><span class="os-tag">Feature recs</span><span class="os-tag">Phased rollout</span><span
+                class="os-tag">UX decisions</span></div>
+          </div>
+          <div class="os-step accent">
+            <p class="os-num">05</p>
+            <p class="os-name">Measure impact</p>
+            <div class="os-tags"><span class="os-tag">Adoption</span><span class="os-tag">Retention</span><span
+                class="os-tag">Engagement</span></div>
+          </div>
+          <div class="os-step" style="border-top-color:var(--char)">
+            <p class="os-num">→</p>
+            <p class="os-name">Iterate</p>
+            <div class="os-tags"><span class="os-tag">Fast loops</span><span class="os-tag">Evidence-based</span><span
+                class="os-tag">Adaptive</span></div>
+          </div>
+        </div>
+        <div class="ai-band">
+          <div class="ai-side">
+            <p class="ai-side-label">AI accelerates</p>
+            <p class="ai-side-title">Speed and synthesis</p>
+            <div class="ai-side-tags">
+              <span class="ai-side-tag">Research synthesis</span>
+              <span class="ai-side-tag">Hypothesis gen</span>
+              <span class="ai-side-tag">Documentation</span>
+              <span class="ai-side-tag">Rapid iteration</span>
+              <span class="ai-side-tag">Insight scaling</span>
+            </div>
+          </div>
+          <div class="ai-divider"></div>
+          <div class="ai-side" style="background:var(--sand)">
+            <p class="ai-side-label">Human judgment navigates</p>
+            <p class="ai-side-title">Context and tradeoffs</p>
+            <div class="ai-side-tags">
+              <span class="ai-side-tag" style="background:var(--sage-light);color:var(--sage-mid)">Prioritization</span>
+              <span class="ai-side-tag" style="background:var(--sage-light);color:var(--sage-mid)">Tradeoffs</span>
+              <span class="ai-side-tag" style="background:var(--sage-light);color:var(--sage-mid)">Decisions</span>
+              <span class="ai-side-tag" style="background:var(--sage-light);color:var(--sage-mid)">Stakeholder
+                context</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── SLIDE 4 HEALTHCONNECT ─── -->
+    <div class="slide">
+      <div class="proj-wrap">
+        <p class="proj-tag" style="color:var(--teal-mid)">04 · Product investigation</p>
+        <h2 class="proj-title">HealthConnect — Telemedicine & EHR Integration</h2>
+        <p class="proj-sub">Systems coordination across 50+ hospitals · implementation planning · cross-functional
+          execution</p>
+        <div class="proj-grid">
+          <div>
+            <p class="plabel">The challenge</p>
+            <p class="pbody">Fragmented patient data systems, disconnected telemedicine infrastructure, and misaligned
+              stakeholder incentives across a healthcare network. No single owner. No clear path.</p>
+            <div class="insight">
+              <p>The real product problem wasn't technical — it was coordination. Success required treating
+                communication and trust as core product features.</p>
+            </div>
+            <p class="plabel">How I approached it</p>
+            <ul class="plist">
+              <li>Mapped stakeholder power vs interest across clinical, IT, compliance, and admin</li>
+              <li>Designed communication architecture as a product layer, not an afterthought</li>
+              <li>Structured a 12-week phased rollout with adoption checkpoints</li>
+              <li>Analyzed operational and compliance risks per phase</li>
+              <li>Balanced scalability, usability, and regulatory constraints simultaneously</li>
+            </ul>
+          </div>
+          <div>
+            <p class="plabel">Implementation roadmap</p>
+            <div class="rm-visual">
+              <div class="rm-row"><span class="rm-ph">Wks 1–3</span>
+                <div class="rm-track">
+                  <div class="rm-fill" style="width:22%"></div>
+                </div><span class="rm-note">Discovery</span>
+              </div>
+              <div class="rm-row"><span class="rm-ph">Wks 4–6</span>
+                <div class="rm-track">
+                  <div class="rm-fill" style="width:44%"></div>
+                </div><span class="rm-note">Architecture</span>
+              </div>
+              <div class="rm-row"><span class="rm-ph">Wks 7–9</span>
+                <div class="rm-track">
+                  <div class="rm-fill" style="width:68%"></div>
+                </div><span class="rm-note">Rollout</span>
+              </div>
+              <div class="rm-row"><span class="rm-ph">Wks 10–12</span>
+                <div class="rm-track">
+                  <div class="rm-fill" style="width:100%"></div>
+                </div><span class="rm-note">Adoption</span>
+              </div>
+            </div>
+            <p class="plabel">Stakeholder map</p>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:4px;border:0.5px solid var(--taupe)">
+              <div style="padding:12px;background:var(--teal-light)">
+                <div style="font-size:10px;color:var(--teal-mid);margin-bottom:4px">High power · high interest</div>
+                <div style="font-size:11.5px;color:var(--char)">Clinical leads — manage closely</div>
+              </div>
+              <div style="padding:12px;background:var(--off)">
+                <div style="font-size:10px;color:var(--muted);margin-bottom:4px">High power · low interest</div>
+                <div style="font-size:11.5px;color:var(--char)">Compliance — keep satisfied</div>
+              </div>
+              <div style="padding:12px;background:var(--off)">
+                <div style="font-size:10px;color:var(--muted);margin-bottom:4px">Low power · high interest</div>
+                <div style="font-size:11.5px;color:var(--char)">IT staff — keep informed</div>
+              </div>
+              <div style="padding:12px;background:var(--sand)">
+                <div style="font-size:10px;color:var(--muted);margin-bottom:4px">Low power · low interest</div>
+                <div style="font-size:11.5px;color:var(--char)">Admin — monitor</div>
+              </div>
+            </div>
+            <p class="plabel" style="margin-top:16px">Communication flow</p>
+            <div class="flow-row">
+              <div class="flow-box accent-f">Discovery brief</div><span class="flow-arr">→</span>
+              <div class="flow-box">Stakeholder sync</div><span class="flow-arr">→</span>
+              <div class="flow-box">Phased update</div><span class="flow-arr">→</span>
+              <div class="flow-box">Adoption review</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── SLIDE 5 MEAL PLANNING ─── -->
+    <div class="slide">
+      <div class="proj-wrap">
+        <p class="proj-tag" style="color:var(--sage-mid)">05 · Retention analysis</p>
+        <h2 class="proj-title">Meal Planning App — The Execution Gap</h2>
+        <p class="proj-sub">Behavioral analysis · retention strategy · onboarding design for beginner users</p>
+        <div class="proj-grid">
+          <div>
+            <div class="insight" style="border-left-color:var(--teal);margin-bottom:24px">
+              <p>Users weren't failing during planning.<br>They were failing during execution.</p>
+            </div>
+            <p class="plabel">Research conducted</p>
+            <ul class="plist" style="margin-bottom:24px">
+              <li>Feature adoption and drop-off analysis</li>
+              <li>User segmentation — beginners vs experienced</li>
+              <li>Journey mapping through Days 1–14</li>
+              <li>Behavioral pattern analysis at drop-off windows</li>
+              <li>Survey design and synthesis</li>
+            </ul>
+            <p class="plabel">Product decisions</p>
+            <ul class="plist">
+              <li>Beginner onboarding flow with reduced complexity</li>
+              <li>"Start small" 3-meal plans for week one</li>
+              <li>Retention nudges during the Days 5–8 drop window</li>
+              <li>Grocery integration linked to completion rates</li>
+              <li>Adaptive customization unlocked after first win</li>
+            </ul>
+          </div>
+          <div>
+            <p class="plabel">Retention funnel</p>
+            <div style="margin-bottom:20px">
+              <div style="display:flex;align-items:center;gap:8px;margin-bottom:7px"><span
+                  style="font-size:10px;color:var(--muted);width:80px;text-align:right">Sign-up</span>
+                <div
+                  style="flex:1;height:26px;background:var(--teal);border-radius:2px;display:flex;align-items:center;padding:0 10px">
+                  <span style="font-size:11px;font-weight:500;color:var(--white)">100%</span>
+                </div>
+              </div>
+              <div style="display:flex;align-items:center;gap:8px;margin-bottom:7px"><span
+                  style="font-size:10px;color:var(--muted);width:80px;text-align:right">Week 1</span>
+                <div
+                  style="flex:1;height:26px;background:var(--sage);border-radius:2px;display:flex;align-items:center;padding:0 10px;width:72%">
+                  <span style="font-size:11px;font-weight:500;color:var(--white)">72%</span>
+                </div>
+              </div>
+              <div style="display:flex;align-items:center;gap:8px;margin-bottom:7px"><span
+                  style="font-size:10px;color:var(--muted);width:80px;text-align:right">Days 5–8</span>
+                <div
+                  style="height:26px;background:var(--taupe);border-radius:2px;display:flex;align-items:center;padding:0 10px;width:47%">
+                  <span style="font-size:11px;font-weight:500;color:var(--white)">47%</span>
+                </div>
+              </div>
+              <div style="display:flex;align-items:center;gap:8px"><span
+                  style="font-size:10px;color:var(--muted);width:80px;text-align:right">Completion</span>
+                <div
+                  style="height:26px;background:#e0d8cc;border-radius:2px;display:flex;align-items:center;padding:0 10px;width:28%">
+                  <span style="font-size:11px;font-weight:500;color:var(--char)">28%</span>
+                </div>
+              </div>
+            </div>
+            <div class="kpi-row">
+              <div class="kpi">
+                <div class="kpi-val">53%</div>
+                <div class="kpi-label">Non-completion rate</div>
+              </div>
+              <div class="kpi teal-k">
+                <div class="kpi-val">0%</div>
+                <div class="kpi-label">Beginner completion</div>
+              </div>
+              <div class="kpi">
+                <div class="kpi-val">Days 5–8</div>
+                <div class="kpi-label">Peak drop-off window</div>
+              </div>
+              <div class="kpi teal-k">
+                <div class="kpi-val">Grocery</div>
+                <div class="kpi-label">Top completion correlate</div>
+              </div>
+            </div>
+            <p class="plabel">Onboarding flow (proposed)</p>
+            <div class="flow-row">
+              <div class="flow-box accent-f" style="font-size:10px">Simple sign-up</div><span class="flow-arr">→</span>
+              <div class="flow-box" style="font-size:10px">3-meal starter</div><span class="flow-arr">→</span>
+              <div class="flow-box" style="font-size:10px">Grocery link</div><span class="flow-arr">→</span>
+              <div class="flow-box" style="background:var(--sage-light);font-size:10px">First win</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── SLIDE 6 TEMU ─── -->
+    <div class="slide">
+      <div class="proj-wrap">
+        <p class="proj-tag" style="color:var(--sage-mid)">06 · UX sprint</p>
+        <h2 class="proj-title">Temu UX Sprint — Cognitive Overload and the Trust Deficit</h2>
+        <p class="proj-sub">Design sprint · trust vs engagement tradeoffs · purchase confidence</p>
+        <div class="proj-grid">
+          <div>
+            <p class="plabel">The strategic tension</p>
+            <p class="pbody">Temu optimized engagement aggressively — at the direct expense of usability, trust signals,
+              and purchase clarity. A classic product tradeoff: short-term metrics vs sustainable conversion.</p>
+            <div class="insight">
+              <p>Engagement without clarity creates friction at the point of decision-making — where it matters most.
+              </p>
+            </div>
+            <p class="plabel">Proposed solution — "Focus Mode"</p>
+            <ul class="plist">
+              <li>Cleaner visual hierarchy separating utility from gamified browsing</li>
+              <li>Reduced overlays and interruption patterns</li>
+              <li>Price stability indicator to rebuild trust</li>
+              <li>Distraction-free checkout path</li>
+            </ul>
+            <p class="plabel">Sprint process</p>
+            <div class="flow-row">
+              <div class="flow-box" style="font-size:10px">HMW</div><span class="flow-arr">→</span>
+              <div class="flow-box" style="font-size:10px">Journey map</div><span class="flow-arr">→</span>
+              <div class="flow-box" style="font-size:10px">UX eval</div><span class="flow-arr">→</span>
+              <div class="flow-box accent-f" style="font-size:10px">Prototype</div>
+            </div>
+          </div>
+          <div>
+            <p class="plabel">Sprint artifacts</p>
+            <div class="sprint-cols" style="margin-bottom:16px">
+              <div>
+                <p class="sprint-head">HMW questions</p>
+                <div class="sticky s-sand">How might we reduce decision fatigue at browse?</div>
+                <div class="sticky s-sand">How might we signal price reliability?</div>
+              </div>
+              <div>
+                <p class="sprint-head">Key insights</p>
+                <div class="sticky s-teal">Gamification erodes core trust signals</div>
+                <div class="sticky s-teal">Overlays block purchase intent</div>
+              </div>
+              <div>
+                <p class="sprint-head">Solutions</p>
+                <div class="sticky s-sage">Focus Mode toggle</div>
+                <div class="sticky s-sage">Price anchor display</div>
+              </div>
+            </div>
+            <p class="plabel">The core tradeoff</p>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px">
+              <div style="padding:14px;background:var(--off);border-top:1.5px solid var(--taupe)">
+                <p style="font-size:10px;color:var(--muted);margin-bottom:6px">Current state</p>
+                <p style="font-size:12px;color:var(--char)">High engagement<br>Low purchase confidence<br>High friction
+                  at decision</p>
+              </div>
+              <div style="padding:14px;background:var(--teal-light);border-top:1.5px solid var(--teal)">
+                <p style="font-size:10px;color:var(--teal-mid);margin-bottom:6px">Proposed state</p>
+                <p style="font-size:12px;color:var(--char)">Moderate engagement<br>Higher trust signals<br>Lower
+                  checkout friction</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── SLIDE 7 CHOWDECK ─── -->
+    <div class="slide">
+      <div class="proj-wrap">
+        <p class="proj-tag" style="color:var(--teal-mid)">07 · Systems analysis</p>
+        <h2 class="proj-title">Chowdeck — Order Accuracy & Fulfillment Trust</h2>
+        <p class="proj-sub">Research-driven product investigation into customization failures and workflow
+          accountability</p>
+        <div class="proj-grid">
+          <div>
+            <p class="plabel">The product question</p>
+            <p class="pbody">Why were users receiving orders that didn't match what they selected? The surface problem
+              was delivery inaccuracy. The real problem was a communication gap across the fulfillment workflow.</p>
+            <div class="insight">
+              <p>It wasn't a delivery failure — it was an accountability gap between restaurant confirmation and actual
+                fulfillment.</p>
+            </div>
+            <p class="plabel">Research foundation</p>
+            <ul class="plist">
+              <li>48-user survey on order accuracy experiences</li>
+              <li>Behavioral and support-ticket analysis</li>
+              <li>Root cause investigation across the fulfillment chain</li>
+              <li>Secondary reviews and pattern analysis</li>
+            </ul>
+            <p class="plabel">Solution direction</p>
+            <p class="pbody" style="margin-bottom:0">Real-Time Substitution Approval — a communication layer that brings
+              the user back into the fulfillment loop before the order ships, reducing mismatches and rebuilding trust
+              at the point of uncertainty.</p>
+          </div>
+          <div>
+            <p class="plabel">Fulfillment workflow</p>
+            <div style="margin-bottom:20px">
+              <div class="flow-row">
+                <div class="flow-box accent-f" style="font-size:10px">User order</div><span class="flow-arr">→</span>
+                <div class="flow-box" style="font-size:10px">Restaurant</div><span class="flow-arr">→</span>
+                <div class="flow-box" style="background:#fdf0f0;border-color:#e8b0b0;font-size:10px">Substitution gap ⚠
+                </div><span class="flow-arr">→</span>
+                <div class="flow-box" style="font-size:10px">Rider → Delivery</div>
+              </div>
+              <p style="font-size:10.5px;color:var(--muted);margin-top:8px;line-height:1.6">Communication breaks between
+                restaurant confirmation and fulfillment — the user is excluded from this window.</p>
+              <p style="font-size:10px;color:var(--teal-mid);margin-top:6px;font-weight:500">With solution → Restaurant
+                flags substitution → Real-time user approval → Fulfillment proceeds</p>
+            </div>
+            <p class="plabel">Impact goals</p>
+            <div class="kpi-row">
+              <div class="kpi teal-k">
+                <div class="kpi-val" style="font-size:16px">Fewer mismatches</div>
+                <div class="kpi-label">Real-time user approval</div>
+              </div>
+              <div class="kpi">
+                <div class="kpi-val" style="font-size:16px">Trust rebuilt</div>
+                <div class="kpi-label">Transparent fulfillment</div>
+              </div>
+              <div class="kpi">
+                <div class="kpi-val" style="font-size:16px">Less support load</div>
+                <div class="kpi-label">Fewer escalations</div>
+              </div>
+              <div class="kpi teal-k">
+                <div class="kpi-val" style="font-size:16px">48 users</div>
+                <div class="kpi-label">Research foundation</div>
+              </div>
+            </div>
+            <p class="plabel" style="margin-top:4px">What this demonstrates</p>
+            <div style="display:flex;flex-wrap:wrap;gap:6px">
+              <span class="os-tag">User research</span>
+              <span class="os-tag">Workflow thinking</span>
+              <span class="os-tag">Operational reasoning</span>
+              <span class="os-tag">Trust systems</span>
+              <span class="os-tag">Root cause analysis</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── SLIDE 8 AI WORKFLOW ─── -->
+    <div class="slide">
+      <div class="s8-wrap">
+        <p class="s3-tag" style="color:var(--teal-mid);margin-bottom:6px">08 · AI-native workflow</p>
+        <h2 class="s3-title" style="margin-bottom:28px">How I use AI as a product tool</h2>
+        <div class="pipeline">
+          <div class="pipe-step">
+            <p class="pipe-phase">Input</p>
+            <p class="pipe-name">Research synthesis</p>
+            <p class="pipe-desc">Synthesizing large datasets, feedback, and competitive signals faster</p>
+          </div>
+          <div class="pipe-step">
+            <p class="pipe-phase">Processing</p>
+            <p class="pipe-name">Hypothesis generation</p>
+            <p class="pipe-desc">Generating, stress-testing, and refining product hypotheses rapidly</p>
+          </div>
+          <div class="pipe-step">
+            <p class="pipe-phase">Structuring</p>
+            <p class="pipe-name">Documentation</p>
+            <p class="pipe-desc">Organizing product specs, strategy docs, and communication clearly</p>
+          </div>
+          <div class="pipe-step">
+            <p class="pipe-phase">Output</p>
+            <p class="pipe-name">Iteration acceleration</p>
+            <p class="pipe-desc">Shortening feedback loops from insight to decision to next question</p>
+          </div>
+        </div>
+        <div class="phil">
+          <div class="phil-col">
+            <p class="phil-label">AI handles</p>
+            <p class="phil-text">Speed, synthesis, and scale</p>
+          </div>
+          <div class="phil-divider"></div>
+          <div class="phil-col" style="background:var(--sage-light)">
+            <p class="phil-label">Human judgment handles</p>
+            <p class="phil-text">Prioritization, context, tradeoffs, and decisions that matter</p>
+          </div>
+        </div>
+        <p class="plabel" style="margin-bottom:10px">Active uses in my product work</p>
+        <div class="ai-uses">
+          <span class="ai-use-tag">Research synthesis</span>
+          <span class="ai-use-tag">Information structuring</span>
+          <span class="ai-use-tag">Hypothesis refinement</span>
+          <span class="ai-use-tag">Documentation drafts</span>
+          <span class="ai-use-tag">User insight synthesis</span>
+          <span class="ai-use-tag">Communication strategy</span>
+          <span class="ai-use-tag">Rapid ideation support</span>
+          <span class="ai-use-tag">Ambiguity structuring</span>
+          <span class="ai-use-tag">Execution planning</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── SLIDE 9 WHY PM ─── -->
+    <div class="slide">
+      <div class="s9-wrap">
+        <p class="s3-tag" style="color:var(--teal-mid);margin-bottom:6px">09 · Motivation</p>
+        <h2 class="s3-title" style="margin-bottom:28px">Why product. Why Shopify.</h2>
+        <div class="s9-grid">
+          <div>
+            <p style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:12px">
+              What draws me to product</p>
+            <div class="why-items">
+              <div class="why-row">
+                <div class="why-icon"><i class="ti ti-puzzle" aria-hidden="true"></i></div>
+                <div>
+                  <div class="why-text-title">Structured problem solving</div>
+                  <div class="why-text-desc">Finding clarity in problems that don't have obvious answers</div>
+                </div>
+              </div>
+              <div class="why-row">
+                <div class="why-icon"><i class="ti ti-chart-arrows" aria-hidden="true"></i></div>
+                <div>
+                  <div class="why-text-title">Systems thinking</div>
+                  <div class="why-text-desc">Understanding how users, ops, and behavior interconnect</div>
+                </div>
+              </div>
+              <div class="why-row">
+                <div class="why-icon"><i class="ti ti-bolt" aria-hidden="true"></i></div>
+                <div>
+                  <div class="why-text-title">Execution under uncertainty</div>
+                  <div class="why-text-desc">Making progress even when the path isn't fully clear</div>
+                </div>
+              </div>
+              <div class="why-row">
+                <div class="why-icon"><i class="ti ti-brain" aria-hidden="true"></i></div>
+                <div>
+                  <div class="why-text-title">Continuous adaptation</div>
+                  <div class="why-text-desc">Learning fast, updating views based on evidence</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <p style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:12px">
+              Why Shopify</p>
+            <div class="shopify-pills">
+              <div class="s-pill">
+                <div class="s-dot"></div><span class="s-text">AI-native culture and genuine product craft</span>
+              </div>
+              <div class="s-pill">
+                <div class="s-dot"></div><span class="s-text">High agency — ownership over tasks, not tickets</span>
+              </div>
+              <div class="s-pill">
+                <div class="s-dot"></div><span class="s-text">Execution-first, not process-first</span>
+              </div>
+              <div class="s-pill">
+                <div class="s-dot"></div><span class="s-text">Comfort with ambiguity built into the culture</span>
+              </div>
+              <div class="s-pill">
+                <div class="s-dot"></div><span class="s-text">Real users. Real scale. Real constraints.</span>
+              </div>
+              <div class="s-pill">
+                <div class="s-dot"></div><span class="s-text">Products that shape how commerce works</span>
+              </div>
+            </div>
+            <div class="ambition-box">
+              "I'm drawn to environments where independent thinking, rapid adaptation, and execution matter — where
+              figuring things out is the job."
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── SLIDE 10 CLOSING ─── -->
+    <div class="slide">
+      <div class="s10-wrap">
+        <div class="s10-accent"></div>
+        <p class="s10-tag">10 · Closing</p>
+        <h2 class="s10-title">Let's build better product experiences</h2>
+        <div class="s10-rule"></div>
+        <p class="s10-name">Purity Uju Aranonu</p>
+        <p class="s10-sub">Product Strategy · User Research · Systems Thinking · AI-Assisted Execution</p>
+        <div class="s10-links">
+          <a href="mailto:purityaranonu@gmail.com" class="s10-link primary"><i class="ti ti-mail"
+              aria-hidden="true"></i>purityaranonu@gmail.com</a>
+          <a href="https://www.linkedin.com/in/purity-aranonu-ba0370405/" class="s10-link"><i
+              class="ti ti-brand-linkedin" aria-hidden="true"></i>LinkedIn</a>
+          <a href="https://medium.com/@aranonupurity" class="s10-link"><i class="ti ti-brand-medium"
+              aria-hidden="true"></i>Medium</a>
+          <a href="https://docs.google.com/document/d/1nrV7W5A0vt7iCMHGWaur1udS_M1lKHvxo8fljnrwpDo/edit?usp=sharing"
+            target="_blank" class="s10-link">
+            <i class="ti ti-file-text" aria-hidden="true"></i>Resume / CV
+          </a>
+        </div>
+        <p class="s10-statement">Focused on building thoughtful, user-centered products through structured thinking,
+          research, systems analysis, and execution.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    const slides = document.querySelectorAll('.slide');
+    const btns = document.querySelectorAll('.nav button');
+    function go(i) {
+      slides.forEach((s, j) => { s.className = 'slide' + (j === i ? ' on' : '') });
+      btns.forEach((b, j) => { b.className = j === i ? 'on' : '' });
+    }
+    go(0);
+  </script>
+  </style>
+</head>
+
+<body>
+</body>
+
+</html>
