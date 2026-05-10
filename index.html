@@ -89,10 +89,10 @@
 
     /* ─── SLIDE 1 COVER ─── */
     .s1-wrap {
-      padding: 52px 56px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+      padding: 48px 56px;
+      display: grid;
+      grid-template-columns: 1fr 240px;
+      align-items: center;
       min-height: 540px;
       position: relative;
       overflow: hidden
@@ -206,23 +206,31 @@
 
     /* ─── SLIDE 2 ABOUT ─── */
     .s2-wrap {
-      display: grid;
-      grid-template-columns: 1fr 240px;
+      display: block;
       min-height: 540px
     }
 
     .s2-left {
-      padding: 48px 48px 48px 56px;
+      padding: 48px 56px;
       display: flex;
       flex-direction: column
     }
 
-    .s2-right {
-      background: var(--sage-light);
+    .s1-right {
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 24px
+      padding: 0;
+    }
+
+    .profile-circle {
+      width: 240px;
+      height: 240px;
+      border-radius: 50%;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .s2-tag {
@@ -282,18 +290,17 @@
 
     .profile-image {
       width: 100%;
-      max-width: 192px;
-      aspect-ratio: 3 / 4;
+      height: 100%;
       object-fit: cover;
-      object-position: center 20%;
-      border-radius: 4px;
+      object-position: center;
       filter: grayscale(100%);
       display: block;
     }
 
     @media (max-width: 768px) {
-      .s2-wrap {
+      .s1-wrap {
         grid-template-columns: 1fr;
+        gap: 40px;
       }
     }
 
@@ -415,7 +422,7 @@
 
     /* ─── PROJECT SLIDES ─── */
     .proj-wrap {
-      padding: 44px 56px;
+      padding: 48px 56px;
       min-height: 540px
     }
 
@@ -842,7 +849,7 @@
 
     /* ─── SLIDE 10 CLOSING ─── */
     .s10-wrap {
-      padding: 56px;
+      padding: 48px 56px;
       min-height: 540px;
       display: flex;
       flex-direction: column;
@@ -952,7 +959,7 @@
       <button onclick="go(6)"> Chowdeck </button>
       <button onclick="go(7)"> AI Workflow </button>
       <button onclick="go(8)"> Why PM </button>
-      <button onclick="go(9)"> Closing </button>
+      <button onclick="go(9)"> Thank you </button>
     </nav>
 
     <!-- ─── SLIDE 1 COVER ─── -->
@@ -1011,6 +1018,11 @@
             </a>
           </div>
         </div>
+        <div class="s1-right" aria-label="Portrait of Purity Aranonu">
+          <div class="profile-circle">
+            <img src="profile.png" alt="Purity Uju Aranonu" class="profile-image">
+          </div>
+        </div>
       </div>
     </div>
 
@@ -1054,9 +1066,6 @@
               <div class="trait-desc">Team-player, resourceful, proactive</div>
             </div>
           </div>
-        </div>
-        <div class="s2-right" aria-label="Portrait of Purity Aranonu">
-          <img src="profile.jpg" alt="Purity Uju Aranonu" class="profile-image">
         </div>
       </div>
     </div>
@@ -1126,6 +1135,7 @@
           </div>
         </div>
       </div>
+    </div>
 
       <!-- ─── SLIDE 4 HEALTHCONNECT ─── -->
       <div class="slide">
