@@ -69,14 +69,22 @@
       border-color: var(--char)
     }
 
-    .slide {
-      display: none;
-      min-height: 540px;
-      background: var(--white)
+    html {
+      scroll-behavior: smooth;
     }
 
-    .slide.on {
-      display: block
+    .slide {
+      min-height: 100vh;
+      background: var(--white);
+      scroll-margin-top: 55px;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    .slide.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     /* ─── SLIDE 1 COVER ─── */
@@ -913,23 +921,25 @@
       font-style: italic
     }
   </style>
+</head>
 
+<body>
   <div class="pf">
     <nav class="nav" aria-label="Portfolio navigation">
-      <button class="on" onclick="go(0)">01 Cover</button>
-      <button onclick="go(1)">02 About</button>
-      <button onclick="go(2)">03 Approach</button>
-      <button onclick="go(3)">04 HealthConnect</button>
-      <button onclick="go(4)">05 Meal Planning</button>
-      <button onclick="go(5)">06 Temu Sprint</button>
-      <button onclick="go(6)">07 Chowdeck</button>
-      <button onclick="go(7)">08 AI Workflow</button>
-      <button onclick="go(8)">09 Why PM</button>
-      <button onclick="go(9)">10 Closing</button>
+      <button class="on" onclick="go(0)"> Cover </button>
+      <button onclick="go(1)"> About </button>
+      <button onclick="go(2)"> Approach </button>
+      <button onclick="go(3)"> HealthConnect </button>
+      <button onclick="go(4)"> Meal Planning </button>
+      <button onclick="go(5)"> Temu Sprint </button>
+      <button onclick="go(6)"> Chowdeck </button>
+      <button onclick="go(7)"> AI Workflow </button>
+      <button onclick="go(8)"> Why PM </button>
+      <button onclick="go(9)"> Closing </button>
     </nav>
 
     <!-- ─── SLIDE 1 COVER ─── -->
-    <div class="slide on">
+    <div class="slide">
       <div class="s1-wrap">
         <div class="s1-accent-bar"></div>
         <div class="s1-dot-field" aria-hidden="true">
@@ -965,11 +975,11 @@
           <div class="s1-dot"></div>
         </div>
         <div style="position:relative;z-index:1">
-          <p class="s1-tag">Shopify Apprentice PM · Portfolio 2025</p>
+          <p class="s1-tag">Product Manager Portfolio</p>
           <h1 class="s1-name">Purity Uju<br>Aranonu</h1>
           <div class="s1-rule"></div>
           <p class="s1-sub">Product Strategy · User Research · Systems Thinking · AI-Assisted Execution</p>
-          <p class="s1-statement">An AI-native aspiring product manager who independently uses research, systems
+          <p class="s1-statement">An aspiring product manager who uses research, systems
             thinking, user insight, and structured execution to solve ambiguous product problems.</p>
           <div class="s1-links">
             <a href="mailto:purityaranonu@gmail.com" class="s1-link-card primary"><i class="ti ti-mail"
@@ -984,7 +994,6 @@
             </a>
           </div>
         </div>
-        <p class="s1-corner">Shopify APM · 2025</p>
       </div>
     </div>
 
@@ -993,39 +1002,39 @@
       <div class="s2-wrap">
         <div class="s2-left">
           <p class="s2-tag">02 · About</p>
-          <p class="s2-headline">"I'm most energized by complex systems, ambiguous problems, and understanding why users
+          <p class="s2-headline">"I'm interested in complex systems, ambiguous problems, and understanding why users
             behave the way they do."</p>
           <div class="s2-philosophy">
-            I approach products from an operational and systems lens — not just the interface, but the adoption,
-            communication, workflow, and behavioral layers underneath. I work independently, learn quickly in new
-            domains, and find structure in messy, ambiguous problems.
+            I approach products from an operational and systems lens, not just the interface, but the adoption,
+            communication, workflow, and behavioral layers underneath. I work proactively, learn quickly in new
+            domains, and find structure in messy processes.
           </div>
           <p style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:12px">
             Operating principles</p>
           <div class="s2-traits-grid">
             <div class="trait">
-              <div class="trait-name">Structured in ambiguity</div>
-              <div class="trait-desc">Finding shape in unclear, complex problems</div>
+              <div class="trait-name">Structure in ambiguity</div>
+              <div class="trait-desc">Finding shape in unclear processes</div>
             </div>
             <div class="trait">
-              <div class="trait-name">AI-native by default</div>
-              <div class="trait-desc">Real workflow integration, not novelty</div>
+              <div class="trait-name">AI as part of the workflow</div>
+              <div class="trait-desc">Human-centered,AI-Assisted</div>
             </div>
             <div class="trait">
-              <div class="trait-name">Rapid domain learner</div>
+              <div class="trait-name">Rapid domain learning</div>
               <div class="trait-desc">Healthcare, fintech, e-commerce, UX</div>
             </div>
             <div class="trait">
-              <div class="trait-name">Systems-first thinker</div>
-              <div class="trait-desc">Users, ops, communication, behavior</div>
+              <div class="trait-name">Systems-first thinking</div>
+              <div class="trait-desc">Users, operations, communications, behaviors</div>
             </div>
             <div class="trait">
               <div class="trait-name">Execution-oriented</div>
               <div class="trait-desc">Research means nothing without decisions</div>
             </div>
             <div class="trait">
-              <div class="trait-name">High-agency learner</div>
-              <div class="trait-desc">Independent, resourceful, self-directed</div>
+              <div class="trait-name">High-agency learning</div>
+              <div class="trait-desc">Team-player, resourceful, proactive</div>
             </div>
           </div>
         </div>
@@ -1089,61 +1098,58 @@
             <p class="os-num">01</p>
             <p class="os-name">Understand the user</p>
             <div class="os-tags"><span class="os-tag">Research</span><span class="os-tag">Behavior</span><span
-                class="os-tag">Journey maps</span><span class="os-tag">Surveys</span></div>
+                class="os-tag">Journey maps</span></div>
           </div>
           <div class="os-step sage-a">
             <p class="os-num">02</p>
-            <p class="os-name">Identify friction</p>
-            <div class="os-tags"><span class="os-tag">Drop-offs</span><span class="os-tag">Workflow gaps</span><span
-                class="os-tag">Trust issues</span></div>
+            <p class="os-name">Find pain points</p>
+            <div class="os-tags"><span class="os-tag">Workflow gaps</span><span class="os-tag">Edge cases</span><span
+                class="os-tag">3 Whys</span></div>
           </div>
           <div class="os-step accent">
             <p class="os-num">03</p>
-            <p class="os-name">Structure ambiguity</p>
-            <div class="os-tags"><span class="os-tag">Root cause</span><span class="os-tag">Systems map</span><span
-                class="os-tag">Prioritization</span></div>
+            <p class="os-name">Frame the problem</p>
+            <div class="os-tags"><span class="os-tag">System thinking</span><span class="os-tag">Priorities</span><span
+                class="os-tag">Trade-offs</span></div>
           </div>
           <div class="os-step sage-a">
             <p class="os-num">04</p>
             <p class="os-name">Design solutions</p>
-            <div class="os-tags"><span class="os-tag">Feature recs</span><span class="os-tag">Phased rollout</span><span
-                class="os-tag">UX decisions</span></div>
+            <div class="os-tags"><span class="os-tag">ideation</span><span class="os-tag">UX decisions</span><span
+                class="os-tag">Frameworks</span></div>
           </div>
           <div class="os-step accent">
             <p class="os-num">05</p>
-            <p class="os-name">Measure impact</p>
-            <div class="os-tags"><span class="os-tag">Adoption</span><span class="os-tag">Retention</span><span
-                class="os-tag">Engagement</span></div>
+            <p class="os-name">Quality assurance</p>
+            <div class="os-tags"><span class="os-tag">Usability tests</span><span class="os-tag">UX reviews</span><span
+                class="os-tag">Product reliability</span></div>
           </div>
           <div class="os-step" style="border-top-color:var(--char)">
             <p class="os-num">→</p>
-            <p class="os-name">Iterate</p>
-            <div class="os-tags"><span class="os-tag">Fast loops</span><span class="os-tag">Evidence-based</span><span
-                class="os-tag">Adaptive</span></div>
+            <p class="os-name">Impact</p>
+            <div class="os-tags"><span class="os-tag">Outcomes</span><span class="os-tag">Behaviour change</span><span
+                class="os-tag">Efficiency</span></div>
           </div>
         </div>
         <div class="ai-band">
           <div class="ai-side">
-            <p class="ai-side-label">AI accelerates</p>
-            <p class="ai-side-title">Speed and synthesis</p>
+            <p class="ai-side-label">Execution drives momentum</p>
+            <p class="ai-side-title">Speed and iteration</p>
             <div class="ai-side-tags">
-              <span class="ai-side-tag">Research synthesis</span>
-              <span class="ai-side-tag">Hypothesis gen</span>
-              <span class="ai-side-tag">Documentation</span>
-              <span class="ai-side-tag">Rapid iteration</span>
-              <span class="ai-side-tag">Insight scaling</span>
+              <span class="ai-side-tag">Efficient feedback loops</span>
+              <span class="ai-side-tag">Adaptability</span>
+              <span class="ai-side-tag">Continuous improvement</span>
             </div>
           </div>
           <div class="ai-divider"></div>
           <div class="ai-side" style="background:var(--sand)">
-            <p class="ai-side-label">Human judgment navigates</p>
-            <p class="ai-side-title">Context and tradeoffs</p>
+            <p class="ai-side-label">Good judgment shapes product direction</p>
+            <p class="ai-side-title">Users and tradeoffs</p>
             <div class="ai-side-tags">
               <span class="ai-side-tag" style="background:var(--sage-light);color:var(--sage-mid)">Prioritization</span>
-              <span class="ai-side-tag" style="background:var(--sage-light);color:var(--sage-mid)">Tradeoffs</span>
-              <span class="ai-side-tag" style="background:var(--sage-light);color:var(--sage-mid)">Decisions</span>
-              <span class="ai-side-tag" style="background:var(--sage-light);color:var(--sage-mid)">Stakeholder
-                context</span>
+              <span class="ai-side-tag" style="background:var(--sage-light);color:var(--sage-mid)">Strategy</span>
+              <span class="ai-side-tag" style="background:var(--sage-light);color:var(--sage-mid)">Systems
+                thinking</span>
             </div>
           </div>
         </div>
@@ -1372,262 +1378,289 @@
             <p class="plabel">The core tradeoff</p>
             <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px">
               <div style="padding:14px;background:var(--off);border-top:1.5px solid var(--taupe)">
-                <p style="font-size:10px;color:var(--muted);margin-bottom:6px">Current state</p>
-                <p style="font-size:12px;color:var(--char)">High engagement<br>Low purchase confidence<br>High friction
+                <p style="font-size:10px;color:var(--muted);margin-bottom:6px">.Current state</p>
+                <p style="font-size:12px;color:var(--char)">.High engagement<br>.Low purchase confidence<br>.High
+                  friction
                   at decision</p>
-              </div>
-              <div style="padding:14px;background:var(--teal-light);border-top:1.5px solid var(--teal)">
-                <p style="font-size:10px;color:var(--teal-mid);margin-bottom:6px">Proposed state</p>
-                <p style="font-size:12px;color:var(--char)">Moderate engagement<br>Higher trust signals<br>Lower
-                  checkout friction</p>
-              </div>
+              </div <div style="padding:14px;background:var(--teal-light);border-top:1.5px solid var(--teal)">
+              <p style="font-size:10px;color:var(--teal-mid);margin-bottom:6px">Proposed state</p>
+              <p style="font-size:12px;color:var(--char)">.Moderate engagement<br>.Higher trust signals<br>.Lower
+                checkout friction</p>
             </div>
           </div>
         </div>
       </div>
     </div>
+  </div>
 
-    <!-- ─── SLIDE 7 CHOWDECK ─── -->
-    <div class="slide">
-      <div class="proj-wrap">
-        <p class="proj-tag" style="color:var(--teal-mid)">07 · Systems analysis</p>
-        <h2 class="proj-title">Chowdeck — Order Accuracy & Fulfillment Trust</h2>
-        <p class="proj-sub">Research-driven product investigation into customization failures and workflow
-          accountability</p>
-        <div class="proj-grid">
-          <div>
-            <p class="plabel">The product question</p>
-            <p class="pbody">Why were users receiving orders that didn't match what they selected? The surface problem
-              was delivery inaccuracy. The real problem was a communication gap across the fulfillment workflow.</p>
-            <div class="insight">
-              <p>It wasn't a delivery failure — it was an accountability gap between restaurant confirmation and actual
-                fulfillment.</p>
-            </div>
-            <p class="plabel">Research foundation</p>
-            <ul class="plist">
-              <li>48-user survey on order accuracy experiences</li>
-              <li>Behavioral and support-ticket analysis</li>
-              <li>Root cause investigation across the fulfillment chain</li>
-              <li>Secondary reviews and pattern analysis</li>
-            </ul>
-            <p class="plabel">Solution direction</p>
-            <p class="pbody" style="margin-bottom:0">Real-Time Substitution Approval — a communication layer that brings
-              the user back into the fulfillment loop before the order ships, reducing mismatches and rebuilding trust
-              at the point of uncertainty.</p>
+  <!-- ─── SLIDE 7 CHOWDECK ─── -->
+  <div class="slide">
+    <div class="proj-wrap">
+      <p class="proj-tag" style="color:var(--teal-mid)">07 · Systems analysis</p>
+      <h2 class="proj-title">Chowdeck — Order Accuracy & Fulfillment Trust</h2>
+      <p class="proj-sub">Research-driven product investigation into customization failures and workflow
+        accountability</p>
+      <div class="proj-grid">
+        <div>
+          <p class="plabel">The product question</p>
+          <p class="pbody">Why were users receiving orders that didn't match what they selected? The surface problem
+            was delivery inaccuracy. The real problem was a communication gap across the fulfillment workflow.</p>
+          <div class="insight">
+            <p>It wasn't a delivery failure — it was an accountability gap between restaurant confirmation and actual
+              fulfillment.</p>
           </div>
-          <div>
-            <p class="plabel">Fulfillment workflow</p>
-            <div style="margin-bottom:20px">
-              <div class="flow-row">
-                <div class="flow-box accent-f" style="font-size:10px">User order</div><span class="flow-arr">→</span>
-                <div class="flow-box" style="font-size:10px">Restaurant</div><span class="flow-arr">→</span>
-                <div class="flow-box" style="background:#fdf0f0;border-color:#e8b0b0;font-size:10px">Substitution gap ⚠
-                </div><span class="flow-arr">→</span>
-                <div class="flow-box" style="font-size:10px">Rider → Delivery</div>
-              </div>
-              <p style="font-size:10.5px;color:var(--muted);margin-top:8px;line-height:1.6">Communication breaks between
-                restaurant confirmation and fulfillment — the user is excluded from this window.</p>
-              <p style="font-size:10px;color:var(--teal-mid);margin-top:6px;font-weight:500">With solution → Restaurant
-                flags substitution → Real-time user approval → Fulfillment proceeds</p>
+          <p class="plabel">Research foundation</p>
+          <ul class="plist">
+            <li>48-user survey on order accuracy experiences</li>
+            <li>Behavioral and support-ticket analysis</li>
+            <li>Root cause investigation across the fulfillment chain</li>
+            <li>Secondary reviews and pattern analysis</li>
+          </ul>
+          <p class="plabel">Solution direction</p>
+          <p class="pbody" style="margin-bottom:0">Real-Time Substitution Approval — a communication layer that brings
+            the user back into the fulfillment loop before the order ships, reducing mismatches and rebuilding trust
+            at the point of uncertainty.</p>
+        </div>
+        <div>
+          <p class="plabel">Fulfillment workflow</p>
+          <div style="margin-bottom:20px">
+            <div class="flow-row">
+              <div class="flow-box accent-f" style="font-size:10px">User order</div><span class="flow-arr">→</span>
+              <div class="flow-box" style="font-size:10px">Restaurant</div><span class="flow-arr">→</span>
+              <div class="flow-box" style="background:#fdf0f0;border-color:#e8b0b0;font-size:10px">Substitution gap ⚠
+              </div><span class="flow-arr">→</span>
+              <div class="flow-box" style="font-size:10px">Rider → Delivery</div>
             </div>
-            <p class="plabel">Impact goals</p>
-            <div class="kpi-row">
-              <div class="kpi teal-k">
-                <div class="kpi-val" style="font-size:16px">Fewer mismatches</div>
-                <div class="kpi-label">Real-time user approval</div>
-              </div>
-              <div class="kpi">
-                <div class="kpi-val" style="font-size:16px">Trust rebuilt</div>
-                <div class="kpi-label">Transparent fulfillment</div>
-              </div>
-              <div class="kpi">
-                <div class="kpi-val" style="font-size:16px">Less support load</div>
-                <div class="kpi-label">Fewer escalations</div>
-              </div>
-              <div class="kpi teal-k">
-                <div class="kpi-val" style="font-size:16px">48 users</div>
-                <div class="kpi-label">Research foundation</div>
-              </div>
+            <p style="font-size:10.5px;color:var(--muted);margin-top:8px;line-height:1.6">Communication breaks between
+              restaurant confirmation and fulfillment — the user is excluded from this window.</p>
+            <p style="font-size:10px;color:var(--teal-mid);margin-top:6px;font-weight:500">With solution → Restaurant
+              flags substitution → Real-time user approval → Fulfillment proceeds</p>
+          </div>
+          <p class="plabel">Impact goals</p>
+          <div class="kpi-row">
+            <div class="kpi teal-k">
+              <div class="kpi-val" style="font-size:16px">Fewer mismatches</div>
+              <div class="kpi-label">Real-time user approval</div>
             </div>
-            <p class="plabel" style="margin-top:4px">What this demonstrates</p>
-            <div style="display:flex;flex-wrap:wrap;gap:6px">
-              <span class="os-tag">User research</span>
-              <span class="os-tag">Workflow thinking</span>
-              <span class="os-tag">Operational reasoning</span>
-              <span class="os-tag">Trust systems</span>
-              <span class="os-tag">Root cause analysis</span>
+            <div class="kpi">
+              <div class="kpi-val" style="font-size:16px">Trust rebuilt</div>
+              <div class="kpi-label">Transparent fulfillment</div>
             </div>
+            <div class="kpi">
+              <div class="kpi-val" style="font-size:16px">Less support load</div>
+              <div class="kpi-label">Fewer escalations</div>
+            </div>
+            <div class="kpi teal-k">
+              <div class="kpi-val" style="font-size:16px">48 users</div>
+              <div class="kpi-label">Research foundation</div>
+            </div>
+          </div>
+          <p class="plabel" style="margin-top:4px">What this demonstrates</p>
+          <div style="display:flex;flex-wrap:wrap;gap:6px">
+            <span class="os-tag">User research</span>
+            <span class="os-tag">Workflow thinking</span>
+            <span class="os-tag">Operational reasoning</span>
+            <span class="os-tag">Trust systems</span>
+            <span class="os-tag">Root cause analysis</span>
           </div>
         </div>
       </div>
     </div>
+  </div>
 
-    <!-- ─── SLIDE 8 AI WORKFLOW ─── -->
-    <div class="slide">
-      <div class="s8-wrap">
-        <p class="s3-tag" style="color:var(--teal-mid);margin-bottom:6px">08 · AI-native workflow</p>
-        <h2 class="s3-title" style="margin-bottom:28px">How I use AI as a product tool</h2>
-        <div class="pipeline">
-          <div class="pipe-step">
-            <p class="pipe-phase">Input</p>
-            <p class="pipe-name">Research synthesis</p>
-            <p class="pipe-desc">Synthesizing large datasets, feedback, and competitive signals faster</p>
-          </div>
-          <div class="pipe-step">
-            <p class="pipe-phase">Processing</p>
-            <p class="pipe-name">Hypothesis generation</p>
-            <p class="pipe-desc">Generating, stress-testing, and refining product hypotheses rapidly</p>
-          </div>
-          <div class="pipe-step">
-            <p class="pipe-phase">Structuring</p>
-            <p class="pipe-name">Documentation</p>
-            <p class="pipe-desc">Organizing product specs, strategy docs, and communication clearly</p>
-          </div>
-          <div class="pipe-step">
-            <p class="pipe-phase">Output</p>
-            <p class="pipe-name">Iteration acceleration</p>
-            <p class="pipe-desc">Shortening feedback loops from insight to decision to next question</p>
-          </div>
+  <!-- ─── SLIDE 8 AI WORKFLOW ─── -->
+  <div class="slide">
+    <div class="s8-wrap">
+      <p class="s3-tag" style="color:var(--teal-mid);margin-bottom:6px">08 · AI as part of the workflow</p>
+      <h2 class="s3-title" style="margin-bottom:28px">How I use AI as a product tool</h2>
+      <div class="pipeline">
+        <div class="pipe-step">
+          <p class="pipe-phase">Input</p>
+          <p class="pipe-name">Research synthesis</p>
+          <p class="pipe-desc">Synthesizing large datasets, feedback, and competitive signals faster</p>
         </div>
-        <div class="phil">
-          <div class="phil-col">
-            <p class="phil-label">AI handles</p>
-            <p class="phil-text">Speed, synthesis, and scale</p>
-          </div>
-          <div class="phil-divider"></div>
-          <div class="phil-col" style="background:var(--sage-light)">
-            <p class="phil-label">Human judgment handles</p>
-            <p class="phil-text">Prioritization, context, tradeoffs, and decisions that matter</p>
-          </div>
+        <div class="pipe-step">
+          <p class="pipe-phase">Processing</p>
+          <p class="pipe-name">Hypothesis generation</p>
+          <p class="pipe-desc">Generating, stress-testing, and refining product hypotheses rapidly</p>
         </div>
-        <p class="plabel" style="margin-bottom:10px">Active uses in my product work</p>
-        <div class="ai-uses">
-          <span class="ai-use-tag">Research synthesis</span>
-          <span class="ai-use-tag">Information structuring</span>
-          <span class="ai-use-tag">Hypothesis refinement</span>
-          <span class="ai-use-tag">Documentation drafts</span>
-          <span class="ai-use-tag">User insight synthesis</span>
-          <span class="ai-use-tag">Communication strategy</span>
-          <span class="ai-use-tag">Rapid ideation support</span>
-          <span class="ai-use-tag">Ambiguity structuring</span>
-          <span class="ai-use-tag">Execution planning</span>
+        <div class="pipe-step">
+          <p class="pipe-phase">Structuring</p>
+          <p class="pipe-name">Documentation</p>
+          <p class="pipe-desc">Organizing product specs, strategy docs, and communication clearly</p>
+        </div>
+        <div class="pipe-step">
+          <p class="pipe-phase">Output</p>
+          <p class="pipe-name">Iteration acceleration</p>
+          <p class="pipe-desc">Shortening feedback loops from insight to decision to next question</p>
         </div>
       </div>
+      <div class="phil">
+        <div class="phil-col">
+          <p class="phil-label">AI handles</p>
+          <p class="phil-text">Speed, synthesis, and scale</p>
+        </div>
+        <div class="phil-divider"></div>
+        <div class="phil-col" style="background:var(--sage-light)">
+          <p class="phil-label">Product thinking handles</p>
+          <p class="phil-text">Prioritization, context, tradeoffs, and decisions that matter</p>
+        </div>
+      </div>
+      <p class="plabel" style="margin-bottom:10px">Active uses in my product work</p>
+      <div class="ai-uses">
+        <span class="ai-use-tag">Research synthesis</span>
+        <span class="ai-use-tag">Information structuring</span>
+        <span class="ai-use-tag">Hypothesis refinement</span>
+        <span class="ai-use-tag">Documentation drafts</span>
+        <span class="ai-use-tag">User insight synthesis</span>
+        <span class="ai-use-tag">Communication strategy</span>
+        <span class="ai-use-tag">Rapid ideation support</span>
+        <span class="ai-use-tag">Problem structuring</span>
+        <span class="ai-use-tag">Execution planning</span>
+      </div>
     </div>
+  </div>
 
-    <!-- ─── SLIDE 9 WHY PM ─── -->
-    <div class="slide">
-      <div class="s9-wrap">
-        <p class="s3-tag" style="color:var(--teal-mid);margin-bottom:6px">09 · Motivation</p>
-        <h2 class="s3-title" style="margin-bottom:28px">Why product. Why Shopify.</h2>
-        <div class="s9-grid">
-          <div>
-            <p style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:12px">
-              What draws me to product</p>
-            <div class="why-items">
-              <div class="why-row">
-                <div class="why-icon"><i class="ti ti-puzzle" aria-hidden="true"></i></div>
-                <div>
-                  <div class="why-text-title">Structured problem solving</div>
-                  <div class="why-text-desc">Finding clarity in problems that don't have obvious answers</div>
-                </div>
+  <!-- ─── SLIDE 9 WHY PM ───
+  <div class="slide">
+    <div class="s9-wrap">
+      <p class="s3-tag" style="color:var(--teal-mid);margin-bottom:6px">09 · Motivation</p>
+      <h2 class="s3-title" style="margin-bottom:28px">Why product.</h2>
+      <div class="s9-grid">
+        <div>
+          <p style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:12px">
+            What draws me to product</p>
+          <div class="why-items">
+            <div class="why-row">
+              <div class="why-icon"><i class="ti ti-puzzle" aria-hidden="true"></i></div>
+              <div>
+                <div class="why-text-title">Structured problem solving</div>
+                <div class="why-text-desc">Finding clarity in problems that don't have obvious answers</div>
               </div>
-              <div class="why-row">
-                <div class="why-icon"><i class="ti ti-chart-arrows" aria-hidden="true"></i></div>
-                <div>
-                  <div class="why-text-title">Systems thinking</div>
-                  <div class="why-text-desc">Understanding how users, ops, and behavior interconnect</div>
-                </div>
+            </div>
+            <div class="why-row">
+              <div class="why-icon"><i class="ti ti-chart-arrows" aria-hidden="true"></i></div>
+              <div>
+                <div class="why-text-title">Systems thinking</div>
+                <div class="why-text-desc">Understanding how users, ops, and behavior interconnect</div>
               </div>
-              <div class="why-row">
-                <div class="why-icon"><i class="ti ti-bolt" aria-hidden="true"></i></div>
-                <div>
-                  <div class="why-text-title">Execution under uncertainty</div>
-                  <div class="why-text-desc">Making progress even when the path isn't fully clear</div>
-                </div>
+            </div>
+            <div class="why-row">
+              <div class="why-icon"><i class="ti ti-bolt" aria-hidden="true"></i></div>
+              <div>
+                <div class="why-text-title">Execution under uncertainty</div>
+                <div class="why-text-desc">Making progress even when the path isn't fully clear</div>
               </div>
-              <div class="why-row">
-                <div class="why-icon"><i class="ti ti-brain" aria-hidden="true"></i></div>
-                <div>
-                  <div class="why-text-title">Continuous adaptation</div>
-                  <div class="why-text-desc">Learning fast, updating views based on evidence</div>
-                </div>
+            </div>
+            <div class="why-row">
+              <div class="why-icon"><i class="ti ti-brain" aria-hidden="true"></i></div>
+              <div>
+                <div class="why-text-title">Continuous adaptation</div>
+                <div class="why-text-desc">Learning fast, updating views based on evidence</div>
               </div>
             </div>
           </div>
-          <div>
-            <p style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:12px">
-              Why Shopify</p>
-            <div class="shopify-pills">
-              <div class="s-pill">
-                <div class="s-dot"></div><span class="s-text">AI-native culture and genuine product craft</span>
-              </div>
-              <div class="s-pill">
-                <div class="s-dot"></div><span class="s-text">High agency — ownership over tasks, not tickets</span>
-              </div>
-              <div class="s-pill">
-                <div class="s-dot"></div><span class="s-text">Execution-first, not process-first</span>
-              </div>
-              <div class="s-pill">
-                <div class="s-dot"></div><span class="s-text">Comfort with ambiguity built into the culture</span>
-              </div>
-              <div class="s-pill">
-                <div class="s-dot"></div><span class="s-text">Real users. Real scale. Real constraints.</span>
-              </div>
-              <div class="s-pill">
-                <div class="s-dot"></div><span class="s-text">Products that shape how commerce works</span>
-              </div>
+        </div>
+        <div>
+          <p style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:12px">
+            My Ideal Environment</p>
+          <div class="shopify-pills">
+            <div class="s-pill">
+              <div class="s-dot"></div><span class="s-text">AI-native culture and genuine product craft</span>
             </div>
-            <div class="ambition-box">
-              "I'm drawn to environments where independent thinking, rapid adaptation, and execution matter — where
-              figuring things out is the job."
+            <div class="s-pill">
+              <div class="s-dot"></div><span class="s-text">High agency — ownership over tasks, not tickets</span>
             </div>
+            <div class="s-pill">
+              <div class="s-dot"></div><span class="s-text">Execution-first, not process-first</span>
+            </div>
+            <div class="s-pill">
+              <div class="s-dot"></div><span class="s-text">Comfort with ambiguity built into the culture</span>
+            </div>
+            <div class="s-pill">
+              <div class="s-dot"></div><span class="s-text">Real users. Real scale. Real constraints.</span>
+            </div>
+            <div class="s-pill">
+              <div class="s-dot"></div><span class="s-text">Products that make a meaningful impact at scale</span>
+            </div>
+          </div>
+          <div class="ambition-box">
+            "I'm drawn to environments where independent thinking, rapid adaptation, and execution matter — where
+            figuring things out is the job."
           </div>
         </div>
       </div>
     </div>
+  </div> -->
 
-    <!-- ─── SLIDE 10 CLOSING ─── -->
-    <div class="slide">
-      <div class="s10-wrap">
-        <div class="s10-accent"></div>
-        <p class="s10-tag">10 · Closing</p>
-        <h2 class="s10-title">Let's build better product experiences</h2>
-        <div class="s10-rule"></div>
-        <p class="s10-name">Purity Uju Aranonu</p>
-        <p class="s10-sub">Product Strategy · User Research · Systems Thinking · AI-Assisted Execution</p>
-        <div class="s10-links">
-          <a href="mailto:purityaranonu@gmail.com" class="s10-link primary"><i class="ti ti-mail"
-              aria-hidden="true"></i>purityaranonu@gmail.com</a>
-          <a href="https://www.linkedin.com/in/purity-aranonu-ba0370405/" class="s10-link"><i
-              class="ti ti-brand-linkedin" aria-hidden="true"></i>LinkedIn</a>
-          <a href="https://medium.com/@aranonupurity" class="s10-link"><i class="ti ti-brand-medium"
-              aria-hidden="true"></i>Medium</a>
-          <a href="https://docs.google.com/document/d/1nrV7W5A0vt7iCMHGWaur1udS_M1lKHvxo8fljnrwpDo/edit?usp=sharing"
-            target="_blank" class="s10-link">
-            <i class="ti ti-file-text" aria-hidden="true"></i>Resume / CV
-          </a>
-        </div>
-        <p class="s10-statement">Focused on building thoughtful, user-centered products through structured thinking,
-          research, systems analysis, and execution.</p>
+  <!-- ─── SLIDE 10 CLOSING ─── -->
+  <div class="slide">
+    <div class="s10-wrap">
+      <div class="s10-accent"></div>
+      <!-- <p class="s10-tag">10 · Closing</p> -->
+      <h2 class="s10-title">Let's build better product experiences</h2>
+      <div class="s10-rule"></div>
+      <p class="s10-name">Purity Uju Aranonu</p>
+      <p class="s10-sub">Product Strategy · User Research · Systems Thinking · AI-Assisted Execution</p>
+      <div class="s10-links">
+        <a href="mailto:purityaranonu@gmail.com" class="s10-link primary"><i class="ti ti-mail"
+            aria-hidden="true"></i>purityaranonu@gmail.com</a>
+        <a href="https://www.linkedin.com/in/purity-aranonu-ba0370405/" class="s10-link"><i class="ti ti-brand-linkedin"
+            aria-hidden="true"></i>LinkedIn</a>
+        <a href="https://medium.com/@aranonupurity" class="s10-link"><i class="ti ti-brand-medium"
+            aria-hidden="true"></i>Medium</a>
+        <a href="https://docs.google.com/document/d/1nrV7W5A0vt7iCMHGWaur1udS_M1lKHvxo8fljnrwpDo/edit?usp=sharing"
+          target="_blank" class="s10-link">
+          <i class="ti ti-file-text" aria-hidden="true"></i>Resume / CV
+        </a>
       </div>
+      <p class="s10-statement">Focused on building thoughtful, user-centered products through structured thinking,
+        research, systems analysis, and execution.</p>
     </div>
+  </div>
 
   </div>
 
   <script>
     const slides = document.querySelectorAll('.slide');
     const btns = document.querySelectorAll('.nav button');
-    function go(i) {
-      slides.forEach((s, j) => { s.className = 'slide' + (j === i ? ' on' : '') });
-      btns.forEach((b, j) => { b.className = j === i ? 'on' : '' });
-    }
-    go(0);
-  </script>
-  </style>
-</head>
 
-<body>
+    function go(i) {
+      slides[i].scrollIntoView({ behavior: 'smooth' });
+    }
+
+    const navObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const index = Array.from(slides).indexOf(entry.target);
+          btns.forEach((b, j) => { b.className = j === index ? 'on' : '' });
+        }
+      });
+    }, { rootMargin: '-50% 0px -50% 0px' });
+
+    const fadeObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    slides.forEach(s => {
+      navObserver.observe(s);
+      fadeObserver.observe(s);
+    });
+
+    // Trigger on load for the first slide if it's already in view
+    setTimeout(() => {
+      slides.forEach(s => {
+        const rect = s.getBoundingClientRect();
+        if (rect.top < window.innerHeight && rect.bottom >= 0) {
+          s.classList.add('visible');
+        }
+      });
+    }, 50);
+  </script>
 </body>
 
 </html>
