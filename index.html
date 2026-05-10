@@ -280,6 +280,23 @@
       line-height: 1.5
     }
 
+    .profile-image {
+      width: 100%;
+      max-width: 160px;
+      height: auto;
+      object-fit: cover;
+      border-radius: 4px;
+      filter: grayscale(100%) opacity(0.9);
+      mix-blend-mode: multiply;
+      display: block;
+    }
+
+    @media (max-width: 768px) {
+      .s2-wrap {
+        grid-template-columns: 1fr;
+      }
+    }
+
     /* ─── SLIDE 3 APPROACH ─── */
     .s3-wrap {
       padding: 48px 56px;
@@ -1038,52 +1055,8 @@
             </div>
           </div>
         </div>
-        <div class="s2-right" aria-label="Illustrated portrait of Purity Aranonu">
-          <svg viewBox="0 0 200 340" width="160" height="272" role="img"
-            aria-label="Minimal modern illustration of a young woman, thoughtful and product-focused">
-            <title>Illustrated portrait</title>
-            <defs>
-              <clipPath id="headclip">
-                <ellipse cx="100" cy="88" rx="42" ry="48" />
-              </clipPath>
-            </defs>
-            <ellipse cx="100" cy="88" rx="42" ry="48" fill="#c4956a" />
-            <ellipse cx="100" cy="82" rx="38" ry="42" fill="#d4a574" />
-            <ellipse cx="100" cy="78" rx="34" ry="35" fill="#d4a574" />
-            <path d="M68 100 Q64 72 70 58 Q82 30 100 26 Q118 30 130 58 Q136 72 132 100 Z" fill="#2a1f14" />
-            <path d="M68 60 Q72 42 100 36 Q128 42 132 60 Q136 80 130 90 Q100 102 70 90 Z" fill="#3a2a18" />
-            <ellipse cx="100" cy="84" rx="34" ry="38" fill="#d4a574" />
-            <ellipse cx="86" cy="86" rx="5" ry="6" fill="#c07040" />
-            <ellipse cx="114" cy="86" rx="5" ry="6" fill="#c07040" />
-            <ellipse cx="86" cy="84" rx="3.5" ry="4.5" fill="#2a1a10" />
-            <ellipse cx="114" cy="84" rx="3.5" ry="4.5" fill="#2a1a10" />
-            <ellipse cx="87" cy="83" rx="1.2" ry="1.2" fill="#fff" />
-            <ellipse cx="115" cy="83" rx="1.2" ry="1.2" fill="#fff" />
-            <path d="M93 96 Q100 101 107 96" stroke="#b06040" stroke-width="1.5" fill="none" stroke-linecap="round" />
-            <rect x="68" y="82" width="5" height="2" rx="1" fill="#3a2a18" />
-            <rect x="127" y="82" width="5" height="2" rx="1" fill="#3a2a18" />
-            <path d="M62 108 Q58 115 60 130 Q62 145 68 148 L70 148 Q64 135 66 120 Z" fill="#d4a574" />
-            <path d="M138 108 Q142 115 140 130 Q138 145 132 148 L130 148 Q136 135 134 120 Z" fill="#d4a574" />
-            <path d="M70 136 Q70 125 100 122 Q130 125 130 136 L136 200 Q136 210 100 214 Q64 210 64 200 Z"
-              fill="#4d8c87" />
-            <path d="M70 136 Q60 140 56 165 Q54 180 62 190 L68 188 Q62 178 64 165 Q66 148 70 142 Z" fill="#4d8c87" />
-            <path d="M130 136 Q140 140 144 165 Q146 180 138 190 L132 188 Q138 178 136 165 Q134 148 130 142 Z"
-              fill="#4d8c87" />
-            <rect x="56" y="188" width="14" height="36" rx="6" fill="#d4a574" />
-            <rect x="130" y="188" width="14" height="36" rx="6" fill="#d4a574" />
-            <rect x="76" y="210" width="48" height="60" rx="4" fill="#2a2a2a" />
-            <rect x="78" y="212" width="44" height="55" rx="3" fill="#f2ede4" />
-            <rect x="82" y="218" width="36" height="3" rx="1" fill="#8aab89" />
-            <rect x="82" y="224" width="28" height="2" rx="1" fill="#c9c3b6" />
-            <rect x="82" y="229" width="32" height="2" rx="1" fill="#c9c3b6" />
-            <rect x="82" y="234" width="24" height="2" rx="1" fill="#c9c3b6" />
-            <rect x="82" y="242" width="18" height="10" rx="2" fill="#4d8c87" />
-            <rect x="83" y="243" width="16" height="8" rx="1" fill="#4d8c87" />
-            <path d="M76 210 L72 195" stroke="#d4a574" stroke-width="5" stroke-linecap="round" fill="none" />
-            <circle cx="72" cy="195" r="6" fill="#d4a574" />
-            <rect x="76" y="272" width="48" height="30" rx="12" fill="#2a1f14" />
-            <ellipse cx="100" cy="302" rx="24" ry="8" fill="#2a1f14" />
-          </svg>
+        <div class="s2-right" aria-label="Portrait of Purity Aranonu">
+          <img src="profile.jpg" alt="Purity Uju Aranonu" class="profile-image">
         </div>
       </div>
     </div>
@@ -1141,17 +1114,14 @@
               <span class="ai-side-tag">Continuous improvement</span>
             </div>
           </div>
-          <div class="ai-divider">
-            <div class="ai-side" style="background:var(--sand)">
-              <p class="ai-side-label">Good judgment shapes product direction</p>
-              <p class="ai-side-title">Users and tradeoffs</p>
-              <div class="ai-side-tags">
-                <span class="ai-side-tag"
-                  style="background:var(--sage-light);color:var(--sage-mid)">Prioritization</span>
-                <span class="ai-side-tag" style="background:var(--sage-light);color:var(--sage-mid)">Strategy</span>
-                <span class="ai-side-tag" style="background:var(--sage-light);color:var(--sage-mid)">Systems
-                  thinking</span>
-              </div>
+          <div class="ai-side" style="background:var(--sand)">
+            <p class="ai-side-label">Good judgment shapes product direction</p>
+            <p class="ai-side-title">Users and tradeoffs</p>
+            <div class="ai-side-tags">
+              <span class="ai-side-tag" style="background:var(--sage-light);color:var(--sage-mid)">Prioritization</span>
+              <span class="ai-side-tag" style="background:var(--sage-light);color:var(--sage-mid)">Strategy</span>
+              <span class="ai-side-tag" style="background:var(--sage-light);color:var(--sage-mid)">Systems
+                thinking</span>
             </div>
           </div>
         </div>
